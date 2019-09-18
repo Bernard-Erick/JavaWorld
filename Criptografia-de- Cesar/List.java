@@ -1,3 +1,5 @@
+import java.sql.SQLOutput;
+
 public class List
 {
     private No primeiro;
@@ -27,6 +29,7 @@ public class List
     }
     public void Add(String valor)
     {
+
         if(primeiro == null)
         {
             No novo = new No(valor);
@@ -52,7 +55,29 @@ public class List
         while (aux != null)
         {
             char codigo = (char) (Character.codePointAt(frase,i)+cesar);
-            System.out.print(codigo);
+            if(Character.codePointAt(frase,i) == 32)
+            {
+                System.out.print(" ");
+            }
+            else
+            {
+                if(Character.codePointAt(frase,i)+cesar > 90 && Character.codePointAt(frase,i) >= 65 && Character.codePointAt(frase,i) <=90) //MAISCULO
+                {
+                    int codigoNovo = ((Character.codePointAt(frase,i) + cesar)-90) +64;
+                    codigo = (char)codigoNovo;
+                    System.out.print(codigo);
+                }
+                else if(Character.codePointAt(frase,i)+cesar > 122 && Character.codePointAt(frase,i) >= 97 && Character.codePointAt(frase,i) <=122 )
+                {
+                    int codigoNovo = ((Character.codePointAt(frase,i) + cesar-122)) + 96;
+                    codigo = (char) codigoNovo;
+                    System.out.print(codigo);
+                }
+                else
+                {
+                    System.out.print(codigo);
+                }
+            }
             i++;
             aux = aux.getProximo();
         }
@@ -68,7 +93,29 @@ public class List
         while (aux != null)
         {
             char codigo = (char) (Character.codePointAt(frase,i)-cesar);
-            System.out.print(codigo);
+            if(Character.codePointAt(frase,i) == 32)
+            {
+                System.out.print(" ");
+            }
+            else
+            {
+                if(Character.codePointAt(frase,i) - cesar < 65 && Character.codePointAt(frase,i) >= 65 && Character.codePointAt(frase,i) <=90) //MAISCULO
+                {
+                    int codigoNovo = 90 - (64 - Character.codePointAt(frase,i)-cesar);
+                    codigo = (char) codigoNovo;
+                    System.out.print(codigo);
+                }
+                else if(Character.codePointAt(frase,i)-cesar <97 && Character.codePointAt(frase,i) >= 97 && Character.codePointAt(frase,i) <= 122) //MINUSCULO
+                {
+                    int codigoNovo = 122 - (96 - Character.codePointAt(frase,i)-cesar);
+                    codigo = (char) codigoNovo;
+                    System.out.println(codigo);
+                }
+                else
+                {
+                    System.out.print(codigo);
+                }
+            }
             i++;
             aux = aux.getProximo();
         }
