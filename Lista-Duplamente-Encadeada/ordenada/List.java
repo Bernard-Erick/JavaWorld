@@ -12,7 +12,7 @@ public class List
 		tamanho = 0;
 	}
 
-	public void sortList() //SE QUISER ORDENAR POR FUN«√O
+	public void sortList() //SE QUISER ORDENAR POR FUN√á√ÉO
 	{
 		No atual = null;
 		No indice = null;
@@ -49,11 +49,11 @@ public class List
 			ultimo = novo;
 		}
 		else if (valor <= primeiro.getDado())
-        {
-            novo.setProximo(primeiro);
-            primeiro.setAnterior(novo); //5 - 9 - 1
-            primeiro = novo;
-        }
+        	{
+            		novo.setProximo(primeiro);
+            		primeiro.setAnterior(novo); //5 - 9 - 1
+            		primeiro = novo;
+        	}
 		else 
 		{
 			temp = primeiro;
@@ -62,25 +62,25 @@ public class List
 			{
 				if(valor >= temp.getDado() && valor <= p.getDado()) //5 - 9 -1
 				{
-		                temp.setProximo(novo);
-	                    novo.setAnterior(temp);
-	                    novo.setProximo(p);
-	                    p.setAnterior(novo);
-	                    ins = true;
-	                    break;
+		               		temp.setProximo(novo);
+	                    		novo.setAnterior(temp);
+	                    		novo.setProximo(p);
+	                   		p.setAnterior(novo);
+	                    		ins = true;
+	                    		break;
 				}
-	            else
-                {
-                    temp = p;
-                    p = p.getProximo();
-                }
+	            		else
+                		{
+                    			temp = p;
+                    			p = p.getProximo();
+                		}
 			}
 			if(!ins)
-            {
-                temp.setProximo(novo);
-                novo.setAnterior(temp);
-                ultimo = novo;
-            }
+            		{
+                		temp.setProximo(novo);
+                		novo.setAnterior(temp);
+                		ultimo = novo;
+            		}
 		}
 		tamanho++;
 	}
@@ -203,7 +203,7 @@ public class List
 		}
 		else 
 		{
-			System.out.println("PosiÁ„o n„o existente!");
+			System.out.println("Posi√ß√£o n√£o existente!");
 		}
 	}
 	public No FindNoPorPos(int pos) 
